@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cosyit</groupId>
+    <artifactId>springboot_test_mudual</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 3.定义变量：properties可定义一些变量或常量,在dependecy中的引用-->
+    <properties>
+        <!-- project.x属性 -->
+        <!--x属性: Set within a <properties /> element in the POM.
+        The value of <properties><someVar>value</someVar></properties> may be used as ${someVar}.-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!-- 默认的，可以识别-->
+        <spring-framework.version>4.1.5.RELEASE</spring-framework.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <!--POM中的任何地方通过使用符号$ {X}来访问，其中X是属性。或者它们可以被插件用作默认值-->
+
+            <!-- 因为上面已经在properties属性中定义了变量spring-framework.version,我们就可以取这个变量的值，
+            ${spring-framework.version},和一些default变量、系统的变量-->
+            <version>${spring-framework.version}</version>
+        </dependency>
+
+        <!--mysql连接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.45</version>
+        </dependency>
+        <!-- spring aop支持-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>4.1.6.RELEASE</version>
+        </dependency>
+        <!-- aspectj支持-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.5</version>
+        </dependency>
+    </dependencies>
+
+    <!-- 4.编译插件:-->
+    <!--http://maven.apache.org/pom.html MAVEN官网-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId> <!-- 域名倒序 -->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>

@@ -1,0 +1,1 @@
+spring init --build=maven --java-version=1.8 --dependencies=web --packaging=jar --boot-version=1.5.9.RELEASE --groupId=com.example  --artifactId=ch5_2_3

@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.cosyit.controller.AuthorSetting",
+      "name": "author",
+      "type": "com.cosyit.controller.AuthorSetting"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.cosyit.controller.AuthorSetting",
+      "name": "author.age",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.cosyit.controller.AuthorSetting",
+      "name": "author.name",
+      "type": "java.lang.String"
+    }
+  ]
+}
